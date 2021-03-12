@@ -18,6 +18,8 @@
 - has_many :favorites
 - has_many :pets
 - has_many :tasks
+- has_many :relationships(active_relationships)
+- has_many :relationships(passive_relationships)
 
 
 ## articlesテーブル
@@ -91,3 +93,16 @@
 
 ### Association
 - belongs_to :user
+
+
+## relationshipsテーブル
+
+|Column      |Type   |Options|
+|------------|-------|-------|
+|following_id|integer|       |
+|follower_id |integer|       |
+
+
+### Association
+- belongs_to :user(following)
+- belongs_to :user(follower)
