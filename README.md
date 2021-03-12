@@ -1,24 +1,93 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+|Column                   |Type    |Options                  |
+|-------------------------|--------|-------------------------|
+|nickname                 |string  |null: false              |
+|email                    |string  |null: false, unique: true|
+|encrypted_password       |string  |null: false              |
+|gender_id                |integer |null: false              |
+|birthday                 |date    |null: false              |
+|have_pet_id              |integer |                         |
+|profile                  |text    |                         |
 
-* Ruby version
+### Association
+- has_many :articles
+- has_many :comments
+- has_many :favorites
+- has_many :pets
+- has_many :tasks
 
-* System dependencies
 
-* Configuration
+## articlesテーブル
 
-* Database creation
+|Column               |Type      |Options          |
+|---------------------|----------|-----------------|
+|title                |string    |null: false      |
+|text                 |text      |null: false      |
+|pet_type_id          |integer   |null: false      |
+|text_type_id         |integer   |null: false      |
+|publishing_setting_id|integer   |null: false      |
+|user_id              |references|foreign_key: true|
 
-* Database initialization
 
-* How to run the test suite
+### Association
+- belongs_to :user
+- has_many :comments
+- has_many :favorites
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## commentsテーブル
 
-* ...
+|Column    |Type      |Options          |
+|----------|----------|-----------------|
+|comment   |text      |null: false      |
+|user_id   |references|foreign_key: true|
+|article_id|references|foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :article
+
+
+## favoritesテーブル
+
+|Column    |Type      |Options          |
+|----------|----------|-----------------|
+|user_id   |references|foreign_key: true|
+|article_id|references|foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :article
+
+
+## petsテーブル
+
+|Column     |Type      |Options          |
+|-----------|----------|-----------------|
+|name       |string    |null: false      |
+|pet_type_id|integer   |null: false      |
+|feature    |text      |null: false      |
+|birthday   |date      |null: false      |
+|age        |integer   |null: false      |
+|user_id    |references|foreign_key: true|
+
+### Association
+- belongs_to :user
+
+
+## tasksテーブル
+
+|Column  |Type      |Options          |
+|--------|----------|-----------------|
+|datetime|datetime  |null: false      |
+|title   |string    |null: false      |
+|content |text      |                 |
+|type    |integer   |null: false      |
+|notice  |integer   |null: false      |
+|user_id |references|foreign_key: true|
+
+### Association
+- belongs_to :user
