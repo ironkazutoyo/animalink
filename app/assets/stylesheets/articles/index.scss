@@ -1,0 +1,105 @@
+a {
+  text-decoration: none;
+}
+
+.main {
+  background: #f3db89;
+}
+
+/* //画面上部通知部分 */
+.notices-contents {
+  width: 100%;
+  height: 20%;
+  background-image: image-url('animal_most.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh 15vw;
+}
+
+.date{
+  border: outset;
+  color: black;
+  text-shadow: 0 0 5px #f3db89;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #f3db89;
+}
+
+.notices-box{
+  font-size: 15px;
+  opacity: 0.8;
+  border: inset;
+  background-color: #f3db89;
+  color: black;
+  width: 90%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 5px 0;
+}
+
+
+
+.notice2-title {
+  line-height: 40px;
+}
+
+
+
+
+/* //画面上部通知部分 */
+
+// メインページ
+
+.main-contents{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.main-page{
+  font-size: 20px;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh 15vw;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.new-articles{
+  opacity: 0.8;
+  border: inset;
+  color: black;
+  width: 100vh;
+  height: 50vh;
+  margin-bottom: 2%;
+}
+.mostlike-articles{
+  opacity: 0.8;
+  border: inset;
+  color: black;
+  width: 100vh;
+  height: 50vh;
+  margin-bottom: 2%;
+
+}
+.favorite-articles{
+  opacity: 0.8;
+  border: inset;
+  color: black;
+  width: 100vh;
+  height: 50vh;
+  margin-bottom: 2%;
+
+}
