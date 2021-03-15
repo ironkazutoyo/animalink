@@ -10,10 +10,6 @@ a {
 .notices-contents {
   width: 100%;
   height: 20%;
-  background-image: image-url('animal_most.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,9 +18,8 @@ a {
 }
 
 .date{
-  border: outset;
+  // border: outset;
   color: black;
-  text-shadow: 0 0 5px #f3db89;
   font-size: 20px;
   font-weight: bold;
   background-color: #f3db89;
@@ -33,7 +28,8 @@ a {
 .notices-box{
   font-size: 15px;
   opacity: 0.8;
-  border: inset;
+  border-top: solid 5px #f3af60;
+  border-bottom: solid 5px #f3af60;
   background-color: #f3db89;
   color: black;
   width: 90%;
@@ -58,6 +54,7 @@ a {
 // メインページ
 
 .main-contents{
+  height: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -74,12 +71,12 @@ a {
   justify-content: center;
   padding: 5vh 15vw;
   color: #fff;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
 .new-articles{
   opacity: 0.8;
-  border: inset;
+  border-top: solid 5px #f3af60;
+  border-bottom: solid 5px #f3af60;
   color: black;
   width: 100vh;
   height: 50vh;
@@ -87,7 +84,7 @@ a {
 }
 .mostlike-articles{
   opacity: 0.8;
-  border: inset;
+  border-bottom: solid 5px #f3af60;
   color: black;
   width: 100vh;
   height: 50vh;
@@ -96,7 +93,7 @@ a {
 }
 .favorite-articles{
   opacity: 0.8;
-  border: inset;
+  border-bottom: solid 5px #f3af60;
   color: black;
   width: 100vh;
   height: 50vh;
