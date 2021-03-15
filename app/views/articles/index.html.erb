@@ -1,0 +1,38 @@
+<%= render "shared/header" %>
+<div class='main'>
+
+  <%# 画面上部通知部分 %>
+  <div class='notices-contents'>
+    <p class='date'>
+      <%= require 'date'
+          date = DateTime.now # 現在のDateTimeオブジェクトを取得
+          p date.strftime("%Y年%m月%d日") %>
+    </p>
+    <div class='notices-box'>
+      <p class='notice1-title'>
+        予定
+      </p>
+      <p class='notice2-title'>
+        通知
+      </p>
+      <p class='notice3-title'>
+        表示
+      </p>
+    </div>
+  </div>
+  <%# 画面上部通知部分 %>
+  <div class='main-contents'>
+    <%= render "shared/side_bar" %>
+
+    <div class='main-page'>
+      <div class='new-articles'>
+        最新投稿表示
+      </div>
+      <div class='mostlike-articles'>
+        最新投稿表示
+      </div>
+      <div class='favorite-articles'>
+        最新投稿表示
+      </div>
+    <div>
+  </div>

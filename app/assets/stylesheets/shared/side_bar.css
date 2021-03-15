@@ -1,0 +1,68 @@
+a {
+  text-decoration: none;
+}
+
+.side-bar{
+  width: 20%;
+  height: 100%;
+  padding-left: 1%;
+  color: #333333;
+}
+
+.menu-content{
+  display: flex;
+  justify-content: center;
+}
+
+.menu-button{
+  width: 15vh;
+  height: 15vh;
+}
+
+.welcom-user{
+  height: auto;
+  margin: 20px;
+}
+
+.menu-user-nickname{
+  font-weight: bold;
+  color: #333333;
+}
+
+.follow-contents{
+  height: 20vh;
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 10px;
+}
+
+.contents-menu{
+  height: 40vh;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  justify-content: space-around;
+
+}
+
+.menu-toppage{
+  color: #333333;
+
+}
+
+.menu-calendar{
+  color: #333333;
+}
+
+.menu-serch{
+  color: #333333;
+
+}
+
+.menu-favorite{
+  color: #333333;
+
+}
