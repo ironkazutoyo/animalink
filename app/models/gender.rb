@@ -1,9 +1,9 @@
-class DaysToShip < ActiveHash::Base
+class Gender < ActiveHash::Base
   self.data = [
-    { id: 1, name: '---' },
-    { id: 2, name: 'male' },
-    { id: 3, name: 'femele' },
-    { id: 4, name: 'Neutral' }
+    { id: 1, name: 'male' },
+    { id: 2, name: 'femele' },
+    { id: 3, name: 'Neutral' },
+    { id: 4, name: 'NoAnswer' },
   ]
 
   include ActiveHash::Associations

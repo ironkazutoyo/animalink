@@ -6,7 +6,8 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
-    validates :gender_id, numericality: { other_than: 1, message: 'Select' }
+    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'Include both letters and numbers' }
+    validates :gender_id, numericality: { message: 'Select' }
     validates :birthday
   end
 
