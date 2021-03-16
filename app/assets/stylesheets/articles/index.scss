@@ -3,13 +3,24 @@ a {
 }
 
 .main {
+  width: 100vw;
   background: #f3db89;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.main-area{
+  width: 80vw;
+}
+
+.side-bar-area{
+  width: 20vw;
 }
 
 /* //画面上部通知部分 */
 .notices-contents {
-  width: 100%;
-  height: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,7 +29,6 @@ a {
 }
 
 .date{
-  // border: outset;
   color: black;
   font-size: 20px;
   font-weight: bold;
@@ -27,13 +37,11 @@ a {
 
 .notices-box{
   font-size: 15px;
-  opacity: 0.8;
   border-top: solid 5px #f3af60;
   border-bottom: solid 5px #f3af60;
   background-color: #f3db89;
   color: black;
-  width: 90%;
-  height: 30%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -45,16 +53,12 @@ a {
 .notice2-title {
   line-height: 40px;
 }
-
-
-
-
 /* //画面上部通知部分 */
 
 // メインページ
 
 .main-contents{
-  height: 100%;
+  height: 80vh;
   display: flex;
   justify-content: space-between;
 }
@@ -63,40 +67,36 @@ a {
 
 .main-page{
   font-size: 20px;
-  width: 80%;
-  height: 100%;
+  width: 100%;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 5vh 15vw;
   color: #fff;
 }
 
 .new-articles{
-  opacity: 0.8;
   border-top: solid 5px #f3af60;
   border-bottom: solid 5px #f3af60;
   color: black;
-  width: 100vh;
-  height: 50vh;
+  width: 100%;
+  height: 30%;
   margin-bottom: 2%;
 }
 .mostlike-articles{
-  opacity: 0.8;
   border-bottom: solid 5px #f3af60;
   color: black;
-  width: 100vh;
-  height: 50vh;
+  width: 100%;
+  height: 30%;
   margin-bottom: 2%;
 
 }
 .favorite-articles{
-  opacity: 0.8;
   border-bottom: solid 5px #f3af60;
   color: black;
-  width: 100vh;
-  height: 50vh;
+  width: 100%;
+  height: 30%;
   margin-bottom: 2%;
 
 }

@@ -3,22 +3,9 @@ a {
 }
 
 .side-bar{
-  width: 20%;
-  height: 100%;
   background: #f3db89;
 }
 
-
-.menu-content{
-  display: flex;
-  justify-content: center;
-}
-
-.menu-button{
-  margin-top: 5vh;
-  width: 15vh;
-  height: 15vh;
-}
 
 .welcom-user{
   height: auto;
@@ -32,10 +19,7 @@ a {
 
 .follow-contents{
   font-size: 3vh;
-  height: auto;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   list-style: none;
   margin: 10px;
   font-weight: bold;
@@ -46,16 +30,17 @@ a {
   margin-bottom: 15px;
 }
 
+
 .contents-menu{
   height: 80vh;
   font-size: 4vh;
   font-weight: bold;
   display: flex;
   flex-direction: column;
-  align-items: center;
   list-style: none;
   justify-content: space-around;
   margin-top: 10vh;
+  margin-left: 3vw;
 }
 
 .menu-toppage{
