@@ -4,13 +4,13 @@
   </div>
   <div class='nav'>
     <ul class='lists-right'>
-      <%# <% if user_signed_in? %>
-        <li><%= link_to 'User', "#", class: "user-nickname" %> </li>
-        <li><%= link_to 'LogOut', "#", class: "logout" %></li>
-      <%# <% else %>
-        <li><%= link_to 'LogIn', "#", class: "login" %></li>
-        <li><%= link_to 'SignUp', "#", class: "sign-up" %></li>
-      <%# <% end %>
+      <% if user_signed_in? %>
+        <li><%= link_to 'LogOut', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <li><%= link_to current_user.nickname, "#", class: "user-nickname" %> </li>
+      <% else %>
+        <li><%= link_to 'SignUp', new_user_registration_path, class: "sign-up" %></li>
+        <li><%= link_to 'LogIn', new_user_session_path, class: "login" %></li>
+      <% end %>
     </ul>
   </div>
 </header>

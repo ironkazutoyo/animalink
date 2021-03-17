@@ -3,8 +3,8 @@
 }
 
 .top-page-header {
-  width: 100%;
-  height: 20%;
+  width: 100vw;
+  height: 10vh;
   padding: 2vh 15vw;
   display: flex;
   justify-content: space-between;
@@ -33,30 +33,32 @@
   display: flex;
   list-style: none;
   align-items: flex-end;
+  flex-direction: row-reverse;
 }
 
 
 .user-nickname {
   text-decoration: none;
-  margin-right: 3vw;
-  color: #333333;
+  color: black;
   font-weight: bold;
+  margin-right: 3vw;
 }
 
 
 .logout {
   text-decoration: none;
-  color: #333333;
+  color: black;
+  margin-right: 3vw;
 }
 
 .login {
   text-decoration: none;
+  color: black;
   margin-right: 3vw;
-  color: #333333;
 }
 
 .sign-up {
   text-decoration: none;
-  color: #333333;
-  margin: auto;
+  color: black;
+  margin-right: 3vw;
 }
