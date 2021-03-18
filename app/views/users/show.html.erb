@@ -1,0 +1,91 @@
+<%= render "shared/second-header"%>
+
+
+<div class='registration-main'>
+  <div class='mypage-wrap'>
+    <div class='mypage-header'>
+      <h1 class='mypage-header-text'>
+        MyPage
+      </h1>
+    </div>
+
+    
+
+    <div class="mypage-group">
+      <div class='mypage-text-wrap'>
+        <label class="mypage-text">
+        NickName
+        </label>
+      </div>
+      <p class='nickname-mypage'><%= @user.nickname %></p>
+    </div>
+
+    <div class="mypage-group">
+      <div class='mypage-text-wrap'>
+        <label class="mypage-text">
+        Email
+        </label>
+      </div>
+      <p class='email-mypage'><%= @user.email %></p>
+    </div>
+
+
+
+    <div class="mypage-group">
+      <div class='mypage-text-wrap'>
+        <label class="mypage-text">
+        Gender
+        </label>
+      </div>
+      <p class='gender-mypage'><%= @user.gender.name %></p>
+    </div>
+    <div class="mypage-group">
+      <div class='mypage-text-wrap'>
+        <label class="mypage-text">
+        Birthday
+        </label>
+      </div>
+      <p class='birthday-mypage'><%= @user.birthday %></p>
+    </div>
+
+    <div class="mypage-group">
+      <div class='mypage-text-wrap'>
+        <label class="mypage-text">
+        Have pets?
+        </label>
+      </div>
+      <% unless @user.have_pet_id.nil? %>
+        <p class='nickname-mypage'><%= @user.have_pet.name %></p>
+      <% else %>
+        <p class='have-pet-mypage'>Prease setting</p>
+      <% end %>
+    </div>
+
+    <div class="mypage-group">
+      <div class='mypage-text-wrap'>
+        <label class="mypage-text">
+        Profile
+        </label>
+      </div>
+      <p class='profile-mypage'><%= current_user.profile %></p>
+    </div>
+
+    <div class="mypage-group">
+      <div class='mypage-text-wrap'>
+        <label class="mypage-text">
+        Your Pets
+        </label>
+      </div>
+      <p class='your-pets-mypage'>Myペット一覧表示</p>
+    </div>
+
+    <% if current_user == @user %>
+      <div class='go-edit-btn'>
+        <%= link_to 'Edit My Page', edit_user_registration_path, class: "go-edit" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
+<%= render "shared/footer" %>
