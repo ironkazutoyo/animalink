@@ -1,0 +1,99 @@
+.mypage-wrap{
+  width: 60%;
+  background-color: #f5f5f5;
+  border-radius: 30px;
+  padding-bottom: 70px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mypage-header{
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.mypage-header-text{
+  margin-top: 30px;
+  line-height: 100px;
+  font-weight: bold;
+}
+
+.mypage-text{
+  border-bottom: solid 3px #f36080;
+}
+
+.mypage-group{
+  margin-top: 50px;
+}
+
+.mypage-text-wrap{
+  text-align: center;
+}
+
+.nickname-mypage{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.email-mypage{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.gender-mypage{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.birthday-mypage{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.have-pet-mypage{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-mypage{
+  text-align: center;
+  margin-top: 30px;
+  white-space: pre-wrap;
+  overflow: scroll;
+  width: 70%;
+  height: 30vh;
+  border-radius: 30px;
+  border: double 5px #f3db89;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+.your-pets-mypage{
+  text-align: center;
+  margin-top: 30px;
+  white-space: pre-wrap;
+  overflow: scroll;
+  width: 70%;
+  height: 30vh;
+  border: double 3px #f3db89;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+.go-edit-btn{
+  text-align: center;
+  margin-top: 60px;
+  border: double 5px black;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.go-edit{
+  font-size: 30px;
+  color: black;
+}
