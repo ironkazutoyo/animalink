@@ -10,12 +10,13 @@ RSpec.describe Article, type: :model do
       it '画像・タイトル・本文・ペット種類・記事種類・公開設定が存在すれば登録できる' do
         expect(@article).to be_valid
       end
-      it '画像は空でも登録できる' do
-        @article.image = nil
-        expect(@article).to be_valid
-      end
     end
     context '記事投稿出来ない時' do
+      it '画像が空だと登録できる' do
+        @article.image = nil
+        @article.valid?
+        expect(@article.errors.full_messages).to include("Image can't be blank")
+      end
       it 'タイトルが空だと登録できない' do
         @article.title = ''
         @article.valid?
