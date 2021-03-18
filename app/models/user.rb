@@ -16,6 +16,8 @@ class User < ApplicationRecord
     validates :birthday
   end
 
+  validates :profile, length: { maximum: 200 }
+
   def update_without_current_password(params, *options)
     params.delete(:current_password)
 
@@ -28,6 +30,8 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
+
+  has_many :articles
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :gender

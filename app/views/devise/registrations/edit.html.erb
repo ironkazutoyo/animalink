@@ -76,14 +76,16 @@
     <div class="form-group">
       <div class='form-text-wrap'>
         <label class="form-text">
-        Profile
+        Profile (最大200文字)
         </label>
       </div>
       <%= f.text_area :profile, class:"profile-text", id:"profile", placeholder:"例) 初めまして。よろしくお願いします。", maxlength:"400" %>
     </div>
 
     <div class='register-btn'>
-      <p> <%= image_submit_tag("enter_btn3.png", class:"enter-btn") %></p>
+      <p class='enter-btn'>
+        <%= image_submit_tag("enter_btn3.png", class:"btn") %>
+      </p>
     </div>
   </div>
 <% end %>
