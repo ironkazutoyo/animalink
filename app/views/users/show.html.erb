@@ -76,7 +76,7 @@
         Your Pets
         </label>
       </div>
-      <p class='your-pets-mypage'>Myペット一覧表示</p>
+      <p class='your-pets-mypage'><%= link_to 'add Pet', new_user_pet_path(@user.id), class: "add-pet" %></p>
     </div>
 
     <% if current_user == @user %>

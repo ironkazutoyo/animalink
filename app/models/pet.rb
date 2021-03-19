@@ -2,10 +2,8 @@ class Pet < ApplicationRecord
 
   with_options presence: true do
     validates :name
-    validates :pet_type_id
+    validates :pet_type_id, numericality: { other_than: 1, message: 'Select' }
     validates :feature
-    validates :birthday
-    validates :age
     validates :user
   end
 
