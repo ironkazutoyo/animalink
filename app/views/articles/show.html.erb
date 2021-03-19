@@ -1,0 +1,49 @@
+<%= render "shared/second-header"%>
+
+
+<div class='registration-main'>
+  <div class='article-show-wrap'>
+    <div class='article-show-header'>
+      <h1 class='article-show-header-text'>
+        <%= @article.title %>
+      </h1>
+    </div>
+
+    <div class="article-show-group">
+      <%= image_tag @article.image ,class:"article-show-image" %>
+    </div>
+
+    <div class="article-show-group">
+      <p class='article-show-text'><%= @article.text %></p>
+    </div>
+
+    <div class="article-show-group">
+      <div class='article-show-text-wrap'>
+        <label class="article-show-info">
+        PetType
+        </label>
+      </div>
+      <p class='article-show-pet-type'><%= @article.pet_type.name %></p>
+    </div>
+
+
+
+    <div class="article-show-group">
+      <div class='mypage-text-wrap'>
+        <label class="article-show-info">
+        TextType
+        </label>
+      </div>
+      <p class='article-show-text-type'><%= @article.text_type.name %></p>
+    </div>
+
+    <% if current_user.id == @article.user_id %>
+      <div class='go-edit-btn'>
+        <%= link_to 'Edit Article', '#', class: "go-edit" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
+<%= render "shared/footer" %>
