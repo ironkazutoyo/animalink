@@ -1,0 +1,94 @@
+<%= render "shared/second-header"%>
+
+
+<div class='registration-main'>
+  <div class='mypage-wrap'>
+    <div class='mypage-header'>
+      <h1 class='mypage-header-text'>
+        MyPage
+      </h1>
+    </div>
+
+    
+
+    <div class="mypage-group">
+      <div class='mypage-text-wrap'>
+        <label class="mypage-text">
+        Name
+        </label>
+      </div>
+      <p class='nickname-mypage'><%= @pet.name %></p>
+    </div>
+
+    <div class="mypage-group">
+      <div class='mypage-text-wrap'>
+        <label class="mypage-text">
+        Image
+        </label>
+      </div>
+      <div class="article-show-group">
+        <%= image_tag @pet.image ,class:"article-show-image" %>
+      </div>
+    </div>
+
+
+
+    <div class="mypage-group">
+      <div class='mypage-text-wrap'>
+        <label class="mypage-text">
+        Pet Type
+        </label>
+      </div>
+      <p class='gender-mypage'><%= @pet.pet_type.name %></p>
+    </div>
+    <div class="mypage-group">
+      <div class='mypage-text-wrap'>
+        <label class="mypage-text">
+        Feature
+        </label>
+      </div>
+      <p class='birthday-mypage'><%= @pet.feature %></p>
+    </div>
+
+    <div class="mypage-group">
+      <div class='mypage-text-wrap'>
+        <label class="mypage-text">
+        Birthday
+        </label>
+      </div>
+      <% unless @pet.birthday.nil? %>
+        <p class='nickname-mypage'><%= @pet.birthday %></p>
+      <% else %>
+        <p class='have-pet-mypage'>Prease setting</p>
+      <% end %>
+    </div>
+
+    <div class="mypage-group">
+      <div class='mypage-text-wrap'>
+        <label class="mypage-text">
+        Age
+        </label>
+      </div>
+      <% unless @pet.age.nil? %>
+        <p class='nickname-mypage'><%= @pet.age %></p>
+      <% else %>
+        <p class='have-pet-mypage'>Prease setting</p>
+      <% end %>
+    </div>
+
+    <% if current_user == @pet.user %>
+      <div class='go-edit-btn'>
+        <%= link_to 'Edit Pet Info', '#', class: "go-edit" %>
+      </div>
+    <% end %>
+
+    <% if current_user == @pet.user %>
+      <div class='go-delete-btn'>
+        <%= link_to 'Delete Pet Info...?', '#', class: "go-delete" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
+<%= render "shared/footer" %>

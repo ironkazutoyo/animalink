@@ -80,8 +80,7 @@
           <ul class='all-pet-lists'>
             <% @user.pets.order('created_at DESC').each do |pet| %>
                 <li class='pet-list'>
-                  <%# <%= link_to item_path(item.id) do %> 
-                  <%= link_to '#', class: 'pet-info' do %>
+                  <%= link_to user_pet_path(pet.id), class: 'pet-info' do %>
                     <div class='pet-img-content'>
                         <%= image_tag pet.image, class: "pet-icon" %>
                     </div>
