@@ -1,7 +1,9 @@
 class PetsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
   before_action :user_find, only: [:new, :create]
-  before_action :move_to_root_path, only: [:new, :create]
+  before_action :pet_find, only: [:show, :edit, :update]
+  before_action :move_to_root_path, only: [:new, :create, :edit, :update]
+
 
   def new
     @pet = Pet.new
@@ -18,8 +20,20 @@ class PetsController < ApplicationController
   end
 
   def show
-    @pet = Pet.find(params[:user_id])
+
   end
+
+  def edit
+  end
+
+  def update
+    if @pet.update(pet_params)
+      redirect_to user_pet_path
+    else
+      render :edit
+    end
+  end
+
 
   private
 
@@ -31,8 +45,12 @@ class PetsController < ApplicationController
     @pet_user = User.find(params[:user_id])
   end
 
+  def pet_find
+    @pet = Pet.find(params[:user_id])
+  end
+
   def move_to_root_path
-    redirect_to root_path unless current_user == @pet_user
+    redirect_to root_path unless current_user == @pet.user
   end
 
 end

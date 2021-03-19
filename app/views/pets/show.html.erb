@@ -78,7 +78,7 @@
 
     <% if current_user == @pet.user %>
       <div class='go-edit-btn'>
-        <%= link_to 'Edit Pet Info', '#', class: "go-edit" %>
+        <%= link_to 'Edit Pet Info', edit_user_pet_path(@pet.id), class: "go-edit" %>
       </div>
     <% end %>
 
