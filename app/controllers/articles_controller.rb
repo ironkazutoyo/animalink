@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-  before_action :article_find, only: [:show, :edit, :update]
-  before_action :move_to_root_path, only: [:edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :article_find, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_root_path, only: [:edit, :update, :destroy]
 
 
   def index
@@ -40,6 +40,11 @@ class ArticlesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @article.destroy
+    redirect_to root_path
   end
 
   private

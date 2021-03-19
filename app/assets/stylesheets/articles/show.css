@@ -69,9 +69,12 @@
   border-bottom: solid 3px #f36080;
 }
 
+.go-btn{
+  display: flex;
+  flex-direction: column;
+}
 
 .go-edit-btn{
-  text-align: center;
   margin-top: 60px;
   border: double 5px black;
   margin-left: auto;
@@ -81,4 +84,16 @@
 .go-edit{
   font-size: 30px;
   color: black;
+}
+
+.go-delete-btn{
+  margin-top: 60px;
+  border: double 5px red;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.go-delete{
+  font-size: 15px;
+  color: red;
 }

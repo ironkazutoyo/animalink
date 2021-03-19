@@ -38,8 +38,13 @@
     </div>
 
     <% if current_user.id == @article.user_id %>
-      <div class='go-edit-btn'>
-        <%= link_to 'Edit Article', edit_article_path(@article.id), class: "go-edit" %>
+      <div class='go-btn'>
+        <div class='go-edit-btn'>
+          <%= link_to 'Edit Article', edit_article_path(@article.id), class: "go-edit" %>
+        </div>
+        <div class='go-delete-btn'>
+          <%= link_to 'Delete Article', article_path(@article.id), method: :delete, class: "go-delete" %>
+        </div>
       </div>
     <% end %>
 
