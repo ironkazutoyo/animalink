@@ -1,6 +1,4 @@
-/* 投稿編集も共用 */
-
-.article-form-wrap{
+.pet-form-wrap{
   width: 60%;
   background-color: #f5f5f5;
   border-radius: 30px;
@@ -10,49 +8,49 @@
   flex-direction: column;
 }
 
-.article-form-header{
+.pet-form-header{
   width: 100%;
   height: 120px;
   text-align: center;
   font-size: 30px;
 }
 
-.article-form-header-text{
+.pet-form-header-text{
   margin-top: 30px;
   line-height: 100px;
   font-weight: bold;
 }
 
 
-.article-form-group{
+.pet-form-group{
   margin-top: 50px;
   width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.article-form-text-wrap{
+.pet-form-text-wrap{
   text-align: center;
 }
 
-.article-title{
-  width: 60%;
+.pet-name{
+  width: 40%;
   height: 30px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pet-image{
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.article-image{
-  margin-top: 30px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.article-text{
-  width: 80%;
-  height: 50vh;
-  margin-top: 30px;
+.pet-feature{
+  width: 50%;
+  height: 30vh;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -68,20 +66,34 @@
   margin-right: auto;
 }
 
-.text-type-form{
+.input-pet-birth-wrap {
   display: flex;
-  margin-top: 20px;
-
-}
-
-.text-type-select{
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.publishing-setting-form{
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
+}
 
+.input-pet-birth-wrap select {
+  width: 75px;
+  margin-top: 5px;
+  height: 45px;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.input-pet-birth-wrap p {
+  line-height: 60px;
+  padding: 0 5px;
+}
+
+.pet-age{
+  width: 5%;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }

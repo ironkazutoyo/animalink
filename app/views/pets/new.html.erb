@@ -1,0 +1,91 @@
+<%= render "shared/second-header"%>
+
+
+<%= form_with model: @pet, url: user_pets_path, class: 'registration-main', local: true do |f| %>
+  <div class='pet-form-wrap'>
+    <div class='pet-form-header'>
+      <h1 class='pet-form-header-text'>
+        YourPet
+      </h1>
+    </div>
+
+    
+  <%= render "shared/error_messages", model: f.object %>
+
+    <div class="pet-form-group">
+      <div class='pet-form-text-wrap'>
+        <label class="pet-form-text">
+        <span class='not-nil'>*</span> Name
+        </label>
+      </div>
+      <%= f.text_field :name, class:"pet-name", id:"name", placeholder:"ペットの名前", maxlength:"20" %>
+    </div>
+
+    <div class="pet-form-group">
+      <div class='pet-form-text-wrap'>
+        <label class="pet-form-text">
+        <span class='not-nil'>*</span> Image
+        </label>
+      </div>
+      <%= f.file_field :image, class:"pet-image", id:"pet-image" %>
+    </div>
+
+    <div class="pet-form-group">
+      <div class='pet-form-text-wrap'>
+        <label class="pet-form-text">
+        <span class='not-nil'>*</span> Pet Type
+        </label>
+      </div>
+      <div class='pet-type-form'>
+        <%= f.collection_select(:pet_type_id, PetType.all, :id, :name, {}, {class:"pet-type-select"}) %>
+      </div>
+    </div>
+
+    <div class="pet-form-group">
+      <div class='pet-form-text-wrap'>
+        <label class="pet-form-text">
+        <span class='not-nil'>*</span> Feature
+        </label>
+      </div>
+      <%= f.text_area :feature, class:"pet-feature", id:"feature", placeholder:"種類や色など、特徴を記入" %>
+    </div>
+
+    <div class="pet-form-group">
+      <div class='pet-form-text-wrap'>
+        <label class="pet-form-text">
+         Birthday
+        </label>
+      </div>
+      <div class='input-pet-birth-wrap'>
+        <%= raw sprintf(
+                    f.date_select(
+                      :birthday,
+                      class:'select-pet-birth',
+                      id:"pet-birth-date",
+                      use_month_numbers: true,
+                      prompt:'--',
+                      start_year: 1990,
+                      end_year: (Time.now.year),
+                      date_separator: '%s'),
+                    "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+      </div>
+    </div>
+
+    <div class="pet-form-group">
+      <div class='pet-form-text-wrap'>
+        <label class="pet-form-text">
+        Age
+        </label>
+      </div>
+        <%= f.text_field :age, class:"pet-age", id:"age", placeholder:"年齢", maxlength:"3" %>
+    </div>
+
+    <div class='register-btn'>
+      <p class='enter-btn'>
+        <%= image_submit_tag("enter_btn3.png", class:"btn") %>
+      </p>
+    </div>
+  </div>
+<% end %>
+
+<%= render "shared/footer" %>
