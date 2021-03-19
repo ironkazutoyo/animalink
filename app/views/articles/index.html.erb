@@ -39,7 +39,7 @@
               <% if article.publishing_setting_id == 1 %>
                 <li class='list'>
                   <%# <%= link_to item_path(item.id) do %> 
-                  <%= link_to article_path(article.id) do %>
+                  <%= link_to article_path(article.id), class: "article-content" do %>
                     <div class='article-img-content'>
                       <%# <% if article.image == nil %>
                       <%# <%= image_tag 'app/asset/images/animal.jpg', class: "item-img" %>
