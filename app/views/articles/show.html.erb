@@ -39,7 +39,7 @@
 
     <% if current_user.id == @article.user_id %>
       <div class='go-edit-btn'>
-        <%= link_to 'Edit Article', '#', class: "go-edit" %>
+        <%= link_to 'Edit Article', edit_article_path(@article.id), class: "go-edit" %>
       </div>
     <% end %>
 
