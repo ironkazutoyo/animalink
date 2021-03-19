@@ -70,13 +70,34 @@
       <p class='profile-mypage'><%= current_user.profile %></p>
     </div>
 
-    <div class="mypage-group">
+    <div class="all-pets-group">
       <div class='mypage-text-wrap'>
         <label class="mypage-text">
         Your Pets
         </label>
       </div>
-      <p class='your-pets-mypage'><%= link_to 'add Pet', new_user_pet_path(@user.id), class: "add-pet" %></p>
+        <div class='pet-list-contents'>
+          <ul class='all-pet-lists'>
+            <% @user.pets.order('created_at DESC').each do |pet| %>
+                <li class='pet-list'>
+                  <%# <%= link_to item_path(item.id) do %> 
+                  <%= link_to '#', class: 'pet-info' do %>
+                    <div class='pet-img-content'>
+                        <%= image_tag pet.image, class: "pet-icon" %>
+                    </div>
+                    <div class='pet-name'>
+                        <span><%= pet.name %></span>
+                    </div>
+                  <% end %>
+                </li>
+            <% end %>
+          </ul>
+                      <div class='add-pet'><%= link_to 'add Pet', new_user_pet_path(@user.id), class: "add-pet-btn" %></div>
+
+        </div>
+
+
+
     </div>
 
     <% if current_user == @user %>

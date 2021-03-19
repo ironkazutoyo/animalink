@@ -18,7 +18,7 @@
         <span class='not-nil'>*</span> Name
         </label>
       </div>
-      <%= f.text_field :name, class:"pet-name", id:"name", placeholder:"ペットの名前", maxlength:"20" %>
+      <%= f.text_field :name, class:"pet-name-form", id:"name", placeholder:"ペットの名前", maxlength:"20" %>
     </div>
 
     <div class="pet-form-group">
@@ -27,7 +27,7 @@
         <span class='not-nil'>*</span> Image
         </label>
       </div>
-      <%= f.file_field :image, class:"pet-image", id:"pet-image" %>
+      <%= f.file_field :image, class:"pet-image-form", id:"pet-image" %>
     </div>
 
     <div class="pet-form-group">
@@ -47,7 +47,7 @@
         <span class='not-nil'>*</span> Feature
         </label>
       </div>
-      <%= f.text_area :feature, class:"pet-feature", id:"feature", placeholder:"種類や色など、特徴を記入" %>
+      <%= f.text_area :feature, class:"pet-feature-form", id:"feature", placeholder:"種類や色など、特徴を記入" %>
     </div>
 
     <div class="pet-form-group">
@@ -77,7 +77,7 @@
         Age
         </label>
       </div>
-        <%= f.text_field :age, class:"pet-age", id:"age", placeholder:"年齢", maxlength:"3" %>
+        <%= f.text_field :age, class:"pet-age-form", id:"age", placeholder:"年齢", maxlength:"3" %>
     </div>
 
     <div class='register-btn'>
