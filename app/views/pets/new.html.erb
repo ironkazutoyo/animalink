@@ -24,6 +24,15 @@
     <div class="pet-form-group">
       <div class='pet-form-text-wrap'>
         <label class="pet-form-text">
+        <span class='not-nil'>*</span> Image
+        </label>
+      </div>
+      <%= f.file_field :image, class:"pet-image", id:"pet-image" %>
+    </div>
+
+    <div class="pet-form-group">
+      <div class='pet-form-text-wrap'>
+        <label class="pet-form-text">
         <span class='not-nil'>*</span> Pet Type
         </label>
       </div>
