@@ -119,12 +119,20 @@ a {
   padding: 1vw;
 }
 
-
-.article-img {
+.article-img-content{
   width: 27vw;
   height: 25vh;
-  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
 
+.article-img {
+  max-width: 27vw;
+  max-height: 25vh;
+  border-radius: 10px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
