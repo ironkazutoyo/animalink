@@ -26,10 +26,39 @@
       </div>
     </div>
     <%# 画面上部通知部分 %>
+
+    <%# 投稿記事表示部分 %>
     <div class='main-contents'>
       <div class='main-page'>
         <div class='new-articles'>
-          new articles
+          all articles
+
+          <ul class='article-lists'>
+
+            <% @articles.order('created_at DESC').each do |article| %>
+              <li class='list'>
+                <%# <%= link_to item_path(item.id) do %> 
+                <%= link_to '#' do %>
+                  <div class='article-img-content'>
+                    <%# <% if article.image == nil %>
+                     <%# <%= image_tag 'app/asset/images/animal.jpg', class: "item-img" %>
+                    <%# <% else %>
+                      <%= image_tag article.image, class: "article-img" %>
+                    <%# <% end %>
+                  </div>
+                  <div class='article-info'>
+                    <h3 class='article-name'>
+                      <%= article.title %>
+                    </h3>
+                    <div class='user-nickname'>
+                      <span><%= article.user.nickname %></span>
+                    </div>
+                  </div>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+
         </div>
         <div class='mostlike-articles'>
           most like articles

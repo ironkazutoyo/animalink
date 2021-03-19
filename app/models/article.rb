@@ -2,6 +2,7 @@ class Article < ApplicationRecord
 
   with_options presence: true do
     validates :title
+    validates :image
     validates :text, length: { maximum: 400 }
     validates :pet_type_id, numericality: { other_than: 1, message: 'Select' }
     validates :text_type_id, numericality: { other_than: 1, message: 'Select' }

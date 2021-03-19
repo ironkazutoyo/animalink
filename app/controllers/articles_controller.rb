@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
     if user_signed_in?
      @user = current_user.id
     end
+    @articles = Article.all
   end
 
   def new
