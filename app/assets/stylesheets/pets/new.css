@@ -33,7 +33,7 @@
   text-align: center;
 }
 
-.pet-name{
+.pet-name-form{
   width: 40%;
   height: 30px;
   margin-top: 20px;
@@ -41,13 +41,13 @@
   margin-right: auto;
 }
 
-.pet-image{
+.pet-image-form{
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.pet-feature{
+.pet-feature-form{
   width: 50%;
   height: 30vh;
   margin-top: 20px;
@@ -90,8 +90,8 @@
   padding: 0 5px;
 }
 
-.pet-age{
-  width: 5%;
+.pet-age-form{
+  width: 8%;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
