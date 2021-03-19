@@ -1,8 +1,8 @@
 class PetsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :destroy]
   before_action :user_find, only: [:new, :create]
-  before_action :pet_find, only: [:show, :edit, :update]
-  before_action :move_to_root_path, only: [:new, :create, :edit, :update]
+  before_action :pet_find, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_root_path, only: [:edit, :update, :destroy]
 
 
   def new
@@ -13,7 +13,7 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
 
     if @pet.save
-      redirect_to root_path
+      redirect_to user_path(@pet.user_id)
     else
       render :new
     end
@@ -32,6 +32,11 @@ class PetsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @pet.destroy
+    redirect_to user_path(@pet.user_id)
   end
 
 

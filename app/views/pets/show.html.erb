@@ -84,7 +84,7 @@
 
     <% if current_user == @pet.user %>
       <div class='go-delete-btn'>
-        <%= link_to 'Delete Pet Info...?', '#', class: "go-delete" %>
+        <%= link_to 'Delete Pet Info...?', user_pet_path(@pet.id), method: :delete, class: "go-delete" %>
       </div>
     <% end %>
 
