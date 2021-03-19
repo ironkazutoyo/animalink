@@ -17,6 +17,10 @@ class PetsController < ApplicationController
     end
   end
 
+  def show
+    @pet = Pet.find(params[:user_id])
+  end
+
   private
 
   def pet_params
