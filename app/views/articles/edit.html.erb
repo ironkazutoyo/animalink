@@ -1,0 +1,83 @@
+<%= render "shared/second-header"%>
+
+
+<%= form_with model: @article, class: 'registration-main', local: true do |f| %>
+  <div class='article-form-wrap'>
+    <div class='article-form-header'>
+      <h1 class='article-form-header-text'>
+        New Article
+      </h1>
+    </div>
+
+    
+  <%= render "shared/error_messages", model: f.object %>
+
+    <div class="article-form-group">
+      <div class='article-form-text-wrap'>
+        <label class="article-form-text">
+        <span class='not-nil'>*</span> Title
+        </label>
+      </div>
+      <%= f.text_field :title, class:"article-title", id:"article-title", placeholder:"タイトル欄", maxlength:"50" %>
+    </div>
+
+    <div class="article-form-group">
+      <div class='article-form-text-wrap'>
+        <label class="article-form-text">
+        <span class='not-nil'>*</span> Image
+        </label>
+      </div>
+      <%= f.file_field :image, class:"article-title", id:"article-image" %>
+    </div>
+
+    <div class="article-form-group">
+      <div class='article-form-text-wrap'>
+        <label class="article-form-text">
+        <span class='not-nil'>*</span> Text
+        </label>
+      </div>
+      <%= f.text_area :text, class:"article-text", id:"article-text", placeholder:"本文"%>
+    </div>
+
+    <div class="article-form-group">
+      <div class='article-form-text-wrap'>
+        <label class="article-form-text">
+        <span class='not-nil'>*</span> Pet Type
+        </label>
+      </div>
+      <div class='pet-type-form'>
+        <%= f.collection_select(:pet_type_id, PetType.all, :id, :name, {}, {class:"pet-type-select"}) %>
+      </div>
+    </div>
+
+    <div class="article-form-group">
+      <div class='article-form-text-wrap'>
+        <label class="article-form-text">
+        <span class='not-nil'>*</span> Text Type
+        </label>
+      </div>
+      <div class='text-type-form'>
+        <%= f.collection_select(:text_type_id, TextType.all, :id, :name, {}, {class:"text-type-select"}) %>
+      </div>
+    </div>
+
+    <div class="article-form-group">
+      <div class='article-form-text-wrap'>
+        <label class="article-form-text">
+        <span class='not-nil'>*</span> Publishing_setting
+        </label>
+      </div>
+      <div class='publishing-setting-form'>
+        <%= f.collection_radio_buttons(:publishing_setting_id, PublishingSetting.all, :id, :name, {}, {class:"publishing-setting-select"}) %>
+      </div>
+    </div>
+
+    <div class='register-btn'>
+      <p class='enter-btn'>
+        <%= image_submit_tag("enter_btn3.png", class:"btn") %>
+      </p>
+    </div>
+  </div>
+<% end %>
+
+<%= render "shared/footer" %>
