@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_22_073548) do
+ActiveRecord::Schema.define(version: 2021_03_22_102930) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -60,11 +60,12 @@ ActiveRecord::Schema.define(version: 2021_03_22_073548) do
   create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "content"
-    t.integer "task_type", null: false
-    t.integer "notice", null: false
+    t.integer "task_type_id", null: false
+    t.integer "notice_id", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "datetime"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 

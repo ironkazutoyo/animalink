@@ -1,6 +1,5 @@
 class PetsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :destroy]
-  before_action :user_find, only: [:new, :create]
   before_action :pet_find, only: [:show, :edit, :update, :destroy]
   before_action :move_to_root_path, only: [:edit, :update, :destroy]
 
@@ -44,10 +43,6 @@ class PetsController < ApplicationController
 
   def pet_params
     params.require(:pet).permit(:name, :image, :pet_type_id, :feature, :birthday, :age).merge(user_id: current_user.id)
-  end
-
-  def user_find
-    @pet_user = User.find(params[:user_id])
   end
 
   def pet_find

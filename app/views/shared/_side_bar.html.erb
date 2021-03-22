@@ -18,7 +18,7 @@
         <ul class='contents-menu'>
           <li><%= link_to 'TopPage', "#", class: "menu-toppage" %> </li>
           <li><%= link_to 'NewArticle', new_article_path, class: "menu-newarticle" %> </li>
-          <li><%= link_to 'Calendar', "#", class: "menu-calendar" %> </li>
+          <li><%= link_to 'Calendar', new_user_task_path(@user), class: "menu-calendar" %> </li>
           <li><%= link_to 'Search', "#", class: "menu-search" %> </li>
           <li><%= link_to 'Favorite', "#", class: "menu-favorite" %> </li>
         </ul>
