@@ -33,6 +33,7 @@ class User < ApplicationRecord
 
   has_many :articles
   has_many :pets
+  has_many :tasks
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :gender

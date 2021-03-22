@@ -12,7 +12,7 @@ RSpec.describe Article, type: :model do
       end
     end
     context '記事投稿出来ない時' do
-      it '画像が空だと登録できる' do
+      it '画像が空だと登録できない' do
         @article.image = nil
         @article.valid?
         expect(@article.errors.full_messages).to include("Image can't be blank")
