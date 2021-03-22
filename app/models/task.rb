@@ -15,7 +15,7 @@ class Task < ApplicationRecord
 
   def schedule_cannot_be_in_the_past
     if datetime == nil
-      errors.add(:datetime, "can't be blank.")
+      errors.add(:datetime, "can't be blank")
     elsif (task_type_id == 1) && datetime.past?
       errors.add(:datetime, "には、予定日を過去日で設定できません。")
     elsif (task_type_id == 2) && datetime.future?
