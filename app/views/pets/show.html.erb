@@ -57,7 +57,7 @@
         </label>
       </div>
       <% unless @pet.birthday.nil? %>
-        <p class='nickname-mypage'><%= @pet.birthday %></p>
+        <p class='nickname-mypage', id='pet-birthday'><%= @pet.birthday %></p>
       <% else %>
         <p class='have-pet-mypage'>Prease setting</p>
       <% end %>
@@ -70,9 +70,9 @@
         </label>
       </div>
       <% unless @pet.age.nil? %>
-        <p class='nickname-mypage'><%= @pet.age %></p>
+        <p class='nickname-mypage', id='pet-age'><%= @pet.age %></p>
       <% else %>
-        <p class='have-pet-mypage'>Prease setting</p>
+        <p class='have-pet-mypage', id='pet-age'>Prease setting</p>
       <% end %>
     </div>
 
