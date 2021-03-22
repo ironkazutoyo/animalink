@@ -7,7 +7,7 @@ class Task < ApplicationRecord
     validates :title
   end
 
-  with_options presence: true, numericality: { message: 'Select' } do
+  with_options presence: true, numericality: { message: 'を選択してください' } do
     validates :task_type_id
     validates :notice_id
   end
@@ -15,7 +15,7 @@ class Task < ApplicationRecord
 
   def schedule_cannot_be_in_the_past
     if datetime == nil
-      errors.add(:datetime, "can't be blank")
+      errors.add(:datetime, "は必須です")
     elsif (task_type_id == 1) && datetime.past?
       errors.add(:datetime, "には、予定日を過去日で設定できません。")
     elsif (task_type_id == 2) && datetime.future?

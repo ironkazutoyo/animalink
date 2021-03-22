@@ -3,7 +3,7 @@ class Pet < ApplicationRecord
   with_options presence: true do
     validates :name
     validates :image
-    validates :pet_type_id, numericality: { other_than: 1, message: 'Select' }
+    validates :pet_type_id, numericality: { other_than: 1, message: 'を選択してください' }
     validates :feature
     validates :user
   end

@@ -15,32 +15,32 @@ RSpec.describe Article, type: :model do
       it '画像が空だと登録できない' do
         @article.image = nil
         @article.valid?
-        expect(@article.errors.full_messages).to include("Image can't be blank")
+        expect(@article.errors.full_messages).to include("Imageを入力してください")
       end
       it 'タイトルが空だと登録できない' do
         @article.title = ''
         @article.valid?
-        expect(@article.errors.full_messages).to include("Title can't be blank")
+        expect(@article.errors.full_messages).to include("Titleを入力してください")
       end
       it '本文が空だと登録できない' do
         @article.text = ''
         @article.valid?
-        expect(@article.errors.full_messages).to include("Text can't be blank")
+        expect(@article.errors.full_messages).to include("Textを入力してください")
       end
       it 'ペット種類が---だと登録できない' do
         @article.pet_type_id = 1
         @article.valid?
-        expect(@article.errors.full_messages).to include('Pet type Select')
+        expect(@article.errors.full_messages).to include('Pet typeを選択してください')
       end
       it '記事種類が---だと登録できない' do
         @article.text_type_id = 1
         @article.valid?
-        expect(@article.errors.full_messages).to include('Text type Select')
+        expect(@article.errors.full_messages).to include('Text typeを選択してください')
       end
       it '公開設定が未選択だと登録できない' do
         @article.publishing_setting_id = ''
         @article.valid?
-        expect(@article.errors.full_messages).to include('Publishing setting Select')
+        expect(@article.errors.full_messages).to include('Publishing settingを選択してください')
       end
     end
   end
