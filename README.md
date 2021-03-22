@@ -82,14 +82,14 @@
 
 ## tasksテーブル
 
-|Column  |Type      |Options          |
-|--------|----------|-----------------|
-|datetime|datetime  |null: false      |
-|title   |string    |null: false      |
-|content |text      |                 |
-|type    |integer   |null: false      |
-|notice  |integer   |null: false      |
-|user_id |references|foreign_key: true|
+|Column       |Type      |Options          |
+|-------------|----------|-----------------|
+|datetime     |datetime  |null: false      |
+|title        |string    |null: false      |
+|content      |text      |                 |
+|task_type    |integer   |null: false      |
+|notice       |integer   |null: false      |
+|user_id      |references|foreign_key: true|
 
 ### Association
 - belongs_to :user
