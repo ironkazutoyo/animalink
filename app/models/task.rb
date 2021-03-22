@@ -17,9 +17,13 @@ class Task < ApplicationRecord
     if datetime == nil
       errors.add(:datetime, "can't be blank.")
     elsif (task_type_id == 1) && datetime.past?
-      errors.add(:datetime, "can't specify your past date as your '予定'.")
+      errors.add(:datetime, "には、予定日を過去日で設定できません。")
+    elsif (task_type_id == 2) && datetime.future?
+      errors.add(:datetime, "には、記録日を未来日で設定できません。")
     end
   end
+
+  belongs_to :user
 
 
   extend ActiveHash::Associations::ActiveRecordExtensions
