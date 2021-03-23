@@ -20,16 +20,16 @@
             <% if task.notice_id == 1 %>
               <div class='top-notice'>
               <% if task.task_type_id == 1 %>
-                <p class='top-yotei'>
+                <p class='top-yotei', id=<%= task.id %>>
                   <%= task.title + 'まで' + "#{ (task.start_time.to_date - Date.current).to_i}" + '日です' %>
-                  <div class='notice-end'>
+                  <div class='notice-end', id=<%= task.id %>>
                     通知終了
                   </div>
                 </p>
               <% else %>
-                <p class='top-kiroku'>
+                <p class='top-kiroku', id=<%= task.id %>>
                   <%= task.title + 'から' + "#{ (task.start_time.to_date - Date.current).to_i}" + '日です' %>
-                  <div class='notice-end'>
+                  <div class='notice-end', id=<%= task.id %>>
                     通知終了
                   </div>
                 </p>
