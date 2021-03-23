@@ -1,6 +1,10 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
+  def index
+    @tasks = Task.all
+  end
+
   def new
     @task = Task.new
   end
@@ -17,7 +21,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:datetime, :title, :content, :task_type_id, :notice_id).merge(user_id: current_user.id)
+    params.require(:task).permit(:start_time, :title, :content, :task_type_id, :notice_id).merge(user_id: current_user.id)
   end
 
 

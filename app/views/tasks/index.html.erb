@@ -1,0 +1,33 @@
+<body class='calendar-top'>
+<%= render "shared/second-header"%>
+<div class='calendar-info'>
+  <div class='plus-task-btn'>
+  <%= link_to '予定・記録の追加', new_user_task_path(), class: 'plus-task' %>
+  </div>
+  <ul class='task-info'>
+    <li class='yotei-look'>
+      予定
+    </li>
+    <li class='kiroku-look'>
+      記録
+    </li>
+  </ul>
+</div>
+<%= month_calendar events: @tasks do |date, tasks| %>
+  <%= date.day %>
+
+    <% tasks.each do |task| %>
+      <% if task.notice_id == 1 %>
+        <div class='yotei'>
+          <%= task.title %>
+        </div>
+      <% else %>
+        <div class='kiroku'>
+          <%= task.title %>
+        </div>
+      <% end %>
+  <% end %>
+<% end %>
+</body>
+
+<%= render "shared/footer" %>

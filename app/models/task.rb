@@ -14,12 +14,12 @@ class Task < ApplicationRecord
 
 
   def schedule_cannot_be_in_the_past
-    if datetime == nil
-      errors.add(:datetime, "は必須です")
-    elsif (task_type_id == 1) && datetime.past?
-      errors.add(:datetime, "には、予定日を過去日で設定できません。")
-    elsif (task_type_id == 2) && datetime.future?
-      errors.add(:datetime, "には、記録日を未来日で設定できません。")
+    if start_time == nil
+      errors.add(:start_time, "は必須です")
+    elsif (task_type_id == 1) && start_time.past?
+      errors.add(:start_time, "には、予定日を過去日で設定できません。")
+    elsif (task_type_id == 2) && start_time.future?
+      errors.add(:start_time, "には、記録日を未来日で設定できません。")
     end
   end
 
