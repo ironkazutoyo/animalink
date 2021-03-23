@@ -8,11 +8,21 @@
   <%# 画面上部通知部分 %>
   <div class='main-area'>
     <div class='notices-contents'>
-      <p class='date'>
+      <div class='date'>
+      <p class='today'>
         <%= require 'date'
             date = DateTime.now # 現在のDateTimeオブジェクトを取得
             p date.strftime("%Y年%m月%d日") %>
       </p>
+        <ul class='top-task-info'>
+          <li class='top-yotei-look'>
+            予定
+          </li>
+          <li class='top-kiroku-look'>
+            記録
+          </li>
+        </ul>
+      </div>
       <div class='notices-box'>
 
         <% Task.all.each do |task| %>

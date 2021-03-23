@@ -30,9 +30,43 @@ a {
 
 .date{
   color: black;
+  width: 100%;
   font-size: 20px;
   font-weight: bold;
   background-color: #f3db89;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+
+.today{
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+}
+
+.top-task-info{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 5px;
+}
+
+.top-yotei-look{
+  width: 25%;
+  font-size: 15px;
+  text-align: center;
+  background-color: #f36363;
+  border: solid 1px black;
+}
+
+.top-kiroku-look{
+  width: 25%;
+  font-size: 15px;
+  text-align: center;
+  background-color: #6ac8f3;
+  border: solid 1px black;
 }
 
 .notices-box{
