@@ -1,0 +1,74 @@
+<%= render "shared/second-header"%>
+
+
+<div class='registration-main'>
+  <div class='mypage-wrap'>
+    <div class='mypage-header'>
+      <h1 class='mypage-header-text'>
+        Task
+      </h1>
+    </div>
+
+    
+
+    <div class="mypage-group">
+      <div class='mypage-text-wrap'>
+        <label class="mypage-text">
+        Date
+        </label>
+      </div>
+      <p class='nickname-mypage'><%= @task.start_time %></p>
+    </div>
+
+
+
+    <div class="mypage-group">
+      <div class='mypage-text-wrap'>
+        <label class="mypage-text">
+        Title
+        </label>
+      </div>
+      <p class='gender-mypage'><%= @task.title %></p>
+    </div>
+
+    <div class="mypage-group">
+      <div class='mypage-text-wrap'>
+        <label class="mypage-text">
+        Content
+        </label>
+      </div>
+      <p class='profile-mypage'><%= @task.content %></p>
+    </div>
+
+    <div class="mypage-group">
+      <div class='mypage-text-wrap'>
+        <label class="mypage-text">
+        Task type
+        </label>
+      </div>
+        <p class='nickname-mypage', id='pet-birthday'><%= @task.task_type.name %></p>
+      </div>
+
+    <div class="mypage-group">
+      <div class='mypage-text-wrap'>
+        <label class="mypage-text">
+        Notice
+        </label>
+      </div>
+        <p class='nickname-mypage'><%= @task.notice.name %></p>
+      </div>
+
+    <% if current_user == @task.user %>
+      <div class='go-edit-btn'>
+        <%= link_to 'Edit Task', '#', class: "go-edit" %>
+      </div>
+
+      <div class='go-delete-btn'>
+        <%= link_to 'Delete Task ?', '#', method: :delete, data: { confirm: "【確認】このTaskを削除してもよろしいですか？" }, class: "go-delete" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
+<%= render "shared/footer" %>
