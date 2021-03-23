@@ -1,5 +1,9 @@
 class TasksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!
+  before_action :move_to_root_path_only_index, only: [:index]
+  before_action :task_find, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_root_path, only: [:edit, :update, :destroy]
+
 
   def index
     @tasks = Task.all
@@ -19,15 +23,12 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
   end
 
   def edit
-    @task = Task.find(params[:id])
   end
 
   def update
-    @task = Task.find(params[:id])
     if @task.update(task_params)
       redirect_to user_task_path
     else
@@ -36,7 +37,6 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find(params[:id])
     @task.destroy
     redirect_to user_tasks_path(@task.user_id)
   end
@@ -50,6 +50,13 @@ class TasksController < ApplicationController
     params.require(:task).permit(:start_time, :title, :content, :task_type_id, :notice_id).merge(user_id: current_user.id)
   end
 
+  def move_to_root_path_only_index
+    redirect_to root_path unless current_user.id == params[:user_id].to_i
+  end
+
+  def move_to_root_path
+    redirect_to root_path unless current_user == @task.user
+  end
 
 
 end

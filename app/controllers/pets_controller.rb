@@ -1,6 +1,7 @@
 class PetsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :pet_find, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_root_path_only_new, only: [:new, :create]
   before_action :move_to_root_path, only: [:edit, :update, :destroy]
 
 
@@ -47,6 +48,10 @@ class PetsController < ApplicationController
 
   def pet_find
     @pet = Pet.find(params[:user_id])
+  end
+
+  def move_to_root_path_only_new
+    redirect_to root_path unless current_user.id == params[:user_id].to_i
   end
 
   def move_to_root_path

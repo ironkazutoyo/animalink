@@ -17,6 +17,7 @@
   <%= date.day %>
 
     <% tasks.each do |task| %>
+    <% if task.user_id == current_user.id %>
       <% if task.notice_id == 1 %>
         <div class='yotei'>
           <%= link_to task.title, user_task_path(id: task.id), class: 'yotei-link' %>
@@ -25,6 +26,7 @@
         <div class='kiroku'>
           <%= link_to task.title, user_task_path(id: task.id), class: 'kiroku-link' %>
         </div>
+      <% end %>
       <% end %>
   <% end %>
 <% end %>
