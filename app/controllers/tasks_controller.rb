@@ -12,11 +12,16 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save
-      redirect_to root_path
+      redirect_to user_tasks_path
     else
       render :new
     end
   end
+
+  def show
+    @task = Task.find(params[:id])
+  end
+
 
   private
 

@@ -19,11 +19,11 @@
     <% tasks.each do |task| %>
       <% if task.notice_id == 1 %>
         <div class='yotei'>
-          <%= task.title %>
+          <%= link_to task.title, user_task_path(id: task.id), class: 'yotei-link' %>
         </div>
       <% else %>
         <div class='kiroku'>
-          <%= task.title %>
+          <%= link_to task.title, user_task_path(id: task.id), class: 'kiroku-link' %>
         </div>
       <% end %>
   <% end %>

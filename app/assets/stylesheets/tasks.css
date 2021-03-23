@@ -19,6 +19,8 @@
   max-width: 100%;
   background-color: #f36363;
   border: solid 1px black;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .kiroku{
@@ -28,12 +30,13 @@
   max-width: 100%;
   background-color: #6ac8f3;
   border: solid 1px black;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .simple-calendar{
   background-color: #fff;
   width: 80%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,6 +74,15 @@
   margin-left: 50px;
 }
 
+.yotei-link{
+  color: black;
+}
+
+.kiroku-link{
+  color: black;
+}
+
+
 .yotei-look{
   display: flex;
   width: 40px;
@@ -84,3 +96,13 @@
   background-color: #6ac8f3;
   border: solid 1px black;
 }
+
+/* .simple-calendar .day{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 0 0 0;
+  width: 80px;
+  height: 80px;
+  overflow: scroll;
+} */
