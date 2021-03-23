@@ -84,7 +84,7 @@
 
     <% if current_user == @pet.user %>
       <div class='go-delete-btn'>
-        <%= link_to 'Delete Pet Info...?', user_pet_path(@pet.id), method: :delete, class: "go-delete" %>
+        <%= link_to 'Delete Pet Info...?', user_pet_path(@pet.id), method: :delete, data: { confirm: "【確認】このPet infoを削除してもよろしいですか？" }, class: "go-delete" %>
       </div>
     <% end %>
 
