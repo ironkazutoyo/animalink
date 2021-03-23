@@ -22,6 +22,20 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    if @task.update(task_params)
+      redirect_to user_task_path
+    else
+      render :edit
+    end
+  end
+
+
 
   private
 
