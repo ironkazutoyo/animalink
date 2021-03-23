@@ -42,12 +42,14 @@ class TasksController < ApplicationController
   end
 
 
-
-
   private
 
   def task_params
     params.require(:task).permit(:start_time, :title, :content, :task_type_id, :notice_id).merge(user_id: current_user.id)
+  end
+
+  def task_find
+    @task = Task.find(params[:id])
   end
 
   def move_to_root_path_only_index
