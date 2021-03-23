@@ -64,7 +64,7 @@
       </div>
 
       <div class='go-delete-btn'>
-        <%= link_to 'Delete Task ?', '#', method: :delete, data: { confirm: "【確認】このTaskを削除してもよろしいですか？" }, class: "go-delete" %>
+        <%= link_to 'Delete Task ?', user_task_path(@task.id), method: :delete, data: { confirm: "【確認】このTaskを削除してもよろしいですか？" }, class: "go-delete" %>
       </div>
     <% end %>
 
