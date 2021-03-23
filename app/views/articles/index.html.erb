@@ -14,15 +14,22 @@
             p date.strftime("%Y年%m月%d日") %>
       </p>
       <div class='notices-box'>
-        <p class='notice1-title'>
-          予定
-        </p>
-        <p class='notice2-title'>
-          通知
-        </p>
-        <p class='notice3-title'>
-          表示
-        </p>
+
+        <% Task.all.each do |task| %>
+          <% if task.user_id == current_user.id %>
+            <% if task.notice_id == 1 %>
+              <div class='top-notice'>
+              <% if task.task_type_id == 1 %>
+                <%= task.title + 'まで' + "#{ (task.start_time.to_date - Date.current).to_i}" + '日です' %>
+              <% else %>
+                <%= task.title + 'から' + "#{ (task.start_time.to_date - Date.current).to_i}" + '日です' %>
+              <% end %>
+              </div>
+
+            <% end %>
+          <% end %>
+        <% end %>
+
       </div>
     </div>
     <%# 画面上部通知部分 %>
