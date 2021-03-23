@@ -12,16 +12,6 @@ RSpec.describe Task, type: :model do
         @task.datetime = DateTime.now + 1.second
         expect(@task).to be_valid
       end
-      it 'タイトル・テキスト・種類が存在し、種類が記録で日時が当日なら登録できる' do
-        @task.task_type_id = 2
-        @task.datetime = DateTime.now
-        expect(@task).to be_valid
-      end
-      it 'タイトル・テキスト・種類が存在し、種類が記録で日時が過去日なら登録できる' do
-        @task.task_type_id = 2
-        @task.datetime = DateTime.now - 1.second
-        expect(@task).to be_valid
-      end
       it 'テキストが空でも登録できる' do
         @task.content = nil
         expect(@task).to be_valid
