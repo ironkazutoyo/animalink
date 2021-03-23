@@ -1,0 +1,73 @@
+<%= render "shared/second-header"%>
+
+
+<%= form_with model: @task, url: user_task_path, class: 'registration-main', local: true do |f| %>
+  <div class='article-form-wrap'>
+    <div class='article-form-header'>
+      <h1 class='article-form-header-text'>
+        New Task
+      </h1>
+    </div>
+
+    
+  <%= render "shared/error_messages", model: f.object %>
+
+    <div class="article-form-group">
+      <div class='article-form-text-wrap'>
+        <label class="article-form-text">
+        <span class='not-nil'>*</span> Date
+        </label>
+      </div>
+      <%= f.datetime_field :start_time, class:"article-title", id:"article-title", type: "datetime-local" %>
+    </div>
+
+    <div class="article-form-group">
+      <div class='article-form-text-wrap'>
+        <label class="article-form-text">
+        <span class='not-nil'>*</span> Title
+        </label>
+      </div>
+      <%= f.text_field :title, class:"article-title", id:"article-title", placeholder:"タイトル欄", maxlength:"50" %>
+    </div>
+
+    <div class="article-form-group">
+      <div class='article-form-text-wrap'>
+        <label class="article-form-text">
+        Text
+        </label>
+      </div>
+      <%= f.text_area :content, class:"article-text", id:"article-text", placeholder:"詳細等"%>
+    </div>
+
+    <div class="article-form-group">
+      <div class='article-form-text-wrap'>
+        <label class="article-form-text">
+        <span class='not-nil'>*</span> Task Type
+        </label>
+      </div>
+      <div class='publishing-setting-form'>
+        <%= f.collection_radio_buttons(:task_type_id, TaskType.all, :id, :name, {}, {class:"task-type-select"}) %>
+      </div>
+    </div>
+
+    <div class="article-form-group">
+      <div class='article-form-text-wrap'>
+        <label class="article-form-text">
+        <span class='not-nil'>*</span> Notice
+        </label>
+      </div>
+      <div class='publishing-setting-form'>
+        <%= f.collection_radio_buttons(:notice_id, Notice.all, :id, :name, {}, {class:"notice-select"}) %>
+      </div>
+    </div>
+
+
+    <div class='register-btn'>
+      <p class='enter-btn'>
+        <%= image_submit_tag("enter_btn3.png", class:"btn") %>
+      </p>
+    </div>
+  </div>
+<% end %>
+
+<%= render "shared/footer" %>
