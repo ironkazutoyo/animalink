@@ -49,7 +49,8 @@ animal(動物)+link(繋がる)<br>
 # DEMO
 ## マイページ
 - トップページの上部右側or左メニューバーの上部にある、ユーザー名をクリックすると、マイページへ遷移する。
-https://user-images.githubusercontent.com/78397291/112438603-6fc3b700-8d8b-11eb-949c-33040c1ffaed.mp4
+![マイページ遷移](https://user-images.githubusercontent.com/78397291/112438603-6fc3b700-8d8b-11eb-949c-33040c1ffaed.mp4)
+
 
 
 # 実装予定の内容
