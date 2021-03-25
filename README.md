@@ -49,25 +49,25 @@ animal(動物)+link(繋がる)<br>
 # DEMO
 ## マイページ
 - トップページの上部右側or左メニューバーの上部にある、ユーザー名をクリックすると、マイページへ遷移する。
-![マイページ遷移]()
+![マイページ遷移](https://user-images.githubusercontent.com/78397291/112472622-b5df4180-8db0-11eb-8a75-0c8e1547655e.gif)
 - マイページの編集では、新規登録時のパスワード以外の情報に加え、ペットの有無と自己紹介記載ができる。(必須ではない)
-![マイページ編集]()
+![マイページ編集](https://user-images.githubusercontent.com/78397291/112472629-b7106e80-8db0-11eb-9208-dde8eeebde1d.gif)
 - 自分の飼っているペットの一覧を登録し、マイページ下部にリストアップでき、同項目内から追加が行える。
-![ペット一覧表示→追加]()
+![ペット一覧表示→追加](https://user-images.githubusercontent.com/78397291/112472640-baa3f580-8db0-11eb-86f0-384d8ad2942b.gif)
 - それぞれのペット情報に誕生日を登録すれば、詳細ページで年齢が年・月・日で自動表示される
 ![年齢の自動表示](https://user-images.githubusercontent.com/78397291/112470617-351f4600-8dae-11eb-9a41-53e335479245.gif)
 <br>
 
 ## 記事投稿・表示
 - 記事作成・編集時、投稿記事の公開・非公開の設定が可能。公開にしたものは、トップページの一覧表示画面に、新着が上になるよう表示される
-![公開の場合]()
+![公開の場合](https://user-images.githubusercontent.com/78397291/112472556-a19b4480-8db0-11eb-8df7-575fdc714722.gif)
 ![非公開の場合](https://user-images.githubusercontent.com/78397291/112470620-35b7dc80-8dae-11eb-8beb-8405b667d323.gif)
 
 ## カレンダー機能
 - 予定や記録を追加すると、予定は緑・記録は青で色分けされ、それぞれの日に表示される
-![カレンダーの表示]()
+![カレンダーの表示](https://user-images.githubusercontent.com/78397291/112472578-a6f88f00-8db0-11eb-8606-a8505a699c98.gif)
 - それぞれの予定や記録をクリックすると詳細が確認でき、編集ページへの遷移ボタンや削除ボタン存在する。
-![予定や記録の詳細画面]()
+![予定や記録の詳細画面](https://user-images.githubusercontent.com/78397291/112472602-ae1f9d00-8db0-11eb-885a-eb8160a1e811.gif)
 - カレンダーの予定・記録の追加や編集では、追加する内容の種類と通知の有無を設定でき、通知ありにしているとトップページ上部に表示される
 ![通知有](https://user-images.githubusercontent.com/78397291/112470612-33558280-8dae-11eb-9f97-eb0b2ea41fe3.gif)
 ![通知無](https://user-images.githubusercontent.com/78397291/112470624-3781a000-8dae-11eb-98d9-d986b73f82ba.gif)
