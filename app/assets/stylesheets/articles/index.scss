@@ -25,7 +25,8 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5% 15%;
+  margin: 5% 15%;
+  height: 30%;
 }
 
 .date{
@@ -33,7 +34,6 @@ a {
   width: 100%;
   font-size: 20px;
   font-weight: bold;
-  background-color: #f3db89;
   display: flex;
   flex-direction: row;
   align-content: space-between;
@@ -53,24 +53,7 @@ a {
   margin-bottom: 5px;
 }
 
-.top-yotei-look{
-  width: 25%;
-  font-size: 15px;
-  text-align: center;
-  background-color: #f36363;
-  border: solid 1px black;
-}
-
-.top-kiroku-look{
-  width: 25%;
-  font-size: 15px;
-  text-align: center;
-  background-color: #6ac8f3;
-  border: solid 1px black;
-}
-
 .notices-box{
-  font-size: 15px;
   border-top: solid 5px #f3af60;
   border-bottom: solid 5px #f3af60;
   background-color: #f3db89;
@@ -79,39 +62,47 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 5px 0;
+
+}
+
+.all-notices{
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  overflow: scroll;
 }
 
 .top-notice{
   display: flex;
   flex-direction: row;
+  border-bottom: solid 1px #f7e6e9;
+  height: 100%;
 }
 
 .top-yotei{
   display: flex;
   justify-content: center;
-  font-size: 10px;
+  font-size: 15px;
   width: 30%;
-  background-color: #f36363;
-  border: solid 1px black;
   margin-top: 5px;
   margin-bottom: 5px;
   margin-left: auto;
   margin-right: auto;
+  border-bottom: solid 3px #6dc05d;
 }
 
 .top-kiroku{
   display: flex;
   justify-content: center;
-  font-size: 10px;
+  font-size: 15px;
   width: 30%;
-  background-color: #6ac8f3;
-  border: solid 1px black;
   margin-top: 5px;
   margin-bottom: 5px;
   margin-left: auto;
   margin-right: auto;
+  border-bottom: solid 3px #3ebaeb;
 }
+
 
 .notice-end{
   border: solid 1px red;

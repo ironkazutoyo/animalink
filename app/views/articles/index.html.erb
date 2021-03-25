@@ -7,51 +7,44 @@
   <% end %>
   <%# 画面上部通知部分 %>
   <div class='main-area'>
-  <% if user_signed_in? %>
-    <div class='notices-contents'>
-      <div class='date'>
-      <p class='top-today'>
-        <%= require 'date'
-            date = DateTime.now # 現在のDateTimeオブジェクトを取得
-            p date.strftime("%Y年%m月%d日") %>
-      </p>
-        <ul class='top-task-info'>
-          <li class='top-yotei-look'>
-            予定
-          </li>
-          <li class='top-kiroku-look'>
-            記録
-          </li>
-        </ul>
-      </div>
-      <div class='notices-box'>
-
-        <% Task.all.each do |task| %>
-          <% if task.user_id == current_user.id %>
-            <% if task.notice_id == 1 %>
-              <div class='top-notice'>
-              <% if task.task_type_id == 1 %>
-                <p class='top-yotei', id=<%= task.id %>>
-                  <%= task.title + 'まで' + "#{ (task.start_time.to_date - Date.current).to_i}" + '日です' %>
-                  <div class='notice-end', id=<%= task.id %>>
-                    通知終了
+    <% if user_signed_in? %>
+      <div class='notices-contents'>
+        <div class='date'>
+          <p class='top-today'>
+            <%= require 'date'
+                date = DateTime.now # 現在のDateTimeオブジェクトを取得
+                p date.strftime("%Y年%m月%d日") %>
+          </p>
+        </div>
+        <div class='notices-box'>
+          <div class='all-notices'>
+            <% @tasks.each do |task| %>
+              <% if task.user_id == current_user.id %>
+                <% if task.notice_id == 1 %>
+                  <div class='top-notice'>
+                    <% if task.task_type_id == 1 %>
+                      <p class='top-yotei', id=<%= task.id %>>
+                        <%= task.title + 'まで' + "#{ (task.start_time.to_date - Date.current).to_i}" + '日です' %>
+                        <div class='notice-end', id=<%= "yotei-notice-off-#{task.id}" %>>
+                          通知終了
+                        </div>
+                      </p>
+                    <% else %>
+                      <p class='top-kiroku', id=<%= task.id %>>
+                        <%= task.title + 'から' + "#{ (task.start_time.to_date - Date.current).to_i}" + '日です' %>
+                        <div class='notice-end', id=<%= "kiroku-notice-off-#{task.id}" %>>
+                          通知終了
+                        </div>
+                      </p>
+                    <% end %>
                   </div>
-                </p>
-              <% else %>
-                <p class='top-kiroku', id=<%= task.id %>>
-                  <%= task.title + 'から' + "#{ (task.start_time.to_date - Date.current).to_i}" + '日です' %>
-                  <div class='notice-end', id=<%= task.id %>>
-                    通知終了
-                  </div>
-                </p>
+                <% end %>
               <% end %>
-              </div>
             <% end %>
-          <% end %>
-        <% end %>
+          </div>
       </div>
     <% end %>
-    </div>
+  </div>
     <%# 画面上部通知部分 %>
 
     <%# 投稿記事表示部分 %>
