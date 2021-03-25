@@ -16,7 +16,7 @@
           </li>
         </ul>
         <ul class='contents-menu'>
-          <li><%= link_to 'TopPage', "#", class: "menu-toppage" %> </li>
+          <li><%= link_to 'TopPage', root_path, class: "menu-toppage" %> </li>
           <li><%= link_to 'NewArticle', new_article_path, class: "menu-newarticle" %> </li>
           <li><%= link_to 'Calendar', user_tasks_path(current_user.id), class: "menu-calendar" %> </li>
           <li><%= link_to 'Search', "#", class: "menu-search" %> </li>
