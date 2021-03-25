@@ -60,11 +60,11 @@
 
     <% if current_user == @task.user %>
       <div class='go-edit-btn'>
-        <%= link_to 'Edit Task', edit_user_task_path(@task.id), class: "go-edit" %>
+        <%= link_to 'Edit Task', edit_user_task_path(@task.user_id), class: "go-edit" %>
       </div>
 
       <div class='go-delete-btn'>
-        <%= link_to 'Delete Task ?', user_task_path(@task.id), method: :delete, data: { confirm: "【確認】このTaskを削除してもよろしいですか？" }, class: "go-delete" %>
+        <%= link_to 'Delete Task ?', user_task_path(@task.user_id), method: :delete, data: { confirm: "【確認】このTaskを削除してもよろしいですか？" }, class: "go-delete" %>
       </div>
     <% end %>
 

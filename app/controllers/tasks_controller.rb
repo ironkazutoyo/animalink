@@ -30,7 +30,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to user_task_path
+      redirect_to user_tasks_path
     else
       render :edit
     end
