@@ -2,11 +2,13 @@
 <div class="s-header-logo">
   <%= link_to image_tag("animalink_logo.png", class:"second-logo"), "/" %>
 </div>
-<ul class='s-header-menu'>
-  <li><%= link_to 'TopPage', root_path, class: "s-header-menu-toppage" %> </li>
-  <li><%= link_to 'NewArticle', new_article_path, class: "s-header-menu-newarticle" %> </li>
-  <li><%= link_to 'Calendar', user_tasks_path(current_user.id), class: "s-header-menu-calendar" %> </li>
-  <li><%= link_to 'Search', "#", class: "s-header-menu-search" %> </li>
-  <li><%= link_to 'Favorite', "#", class: "s-header-menu-favorite" %> </li>
-</ul>
+<% if user_signed_in? %>
+  <ul class='s-header-menu'>
+    <li><%= link_to 'TopPage', root_path, class: "s-header-menu-toppage" %> </li>
+    <li><%= link_to 'NewArticle', new_article_path, class: "s-header-menu-newarticle" %> </li>
+    <li><%= link_to 'Calendar', user_tasks_path(current_user.id), class: "s-header-menu-calendar" %> </li>
+    <li><%= link_to 'Search', "#", class: "s-header-menu-search" %> </li>
+    <li><%= link_to 'Favorite', "#", class: "s-header-menu-favorite" %> </li>
+  </ul>
+<% end %>
 </header>
