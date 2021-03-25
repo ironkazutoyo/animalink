@@ -24,14 +24,18 @@
                   <div class='top-notice'>
                     <% if task.task_type_id == 1 %>
                       <p class='top-yotei', id=<%= task.id %>>
-                        <%= task.title + 'まで' + "#{ (task.start_time.to_date - Date.current).to_i}" + '日です' %>
+                        <% if (task.start_time.to_date - Date.current).to_i > 0 %>
+                          <%= "【" + task.title + "】" + 'の予定まで' + "#{ (task.start_time.to_date - Date.current).to_i}" + '日です' %>
+                        <% else %>
+                          <%= "【" + task.title + "】" + 'の予定から' + "#{ (task.start_time.to_date - Date.current).to_i.abs}" + '日過ぎています' %>
+                        <% end %>
                         <div class='notice-end', id=<%= "yotei-notice-off-#{task.id}" %>>
                           通知終了
                         </div>
                       </p>
                     <% else %>
                       <p class='top-kiroku', id=<%= task.id %>>
-                        <%= task.title + 'から' + "#{ (task.start_time.to_date - Date.current).to_i}" + '日です' %>
+                        <%= "【" + task.title + "】" + 'の記録から' + "#{ (task.start_time.to_date - Date.current).to_i.abs}" + '日経過です' %>
                         <div class='notice-end', id=<%= "kiroku-notice-off-#{task.id}" %>>
                           通知終了
                         </div>
@@ -42,9 +46,10 @@
               <% end %>
             <% end %>
           </div>
+        </div>
       </div>
     <% end %>
-  </div>
+
     <%# 画面上部通知部分 %>
 
     <%# 投稿記事表示部分 %>

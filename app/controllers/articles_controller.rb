@@ -10,7 +10,6 @@ class ArticlesController < ApplicationController
     end
     @articles = Article.all
     @tasks = Task.all.order('task_type_id ASC')
-    binding.pry
     end
 
   def new
