@@ -45,7 +45,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def after_update_path_for(_resource)
-    root_path
+    user_path(@user.id)
   end
 
   def configure_account_update_params
