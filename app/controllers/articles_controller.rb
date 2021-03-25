@@ -9,7 +9,9 @@ class ArticlesController < ApplicationController
      @user = current_user.id
     end
     @articles = Article.all
-  end
+    @tasks = Task.all.order('task_type_id ASC')
+    binding.pry
+    end
 
   def new
     @article = Article.new
@@ -42,6 +44,15 @@ class ArticlesController < ApplicationController
   def destroy
     @article.destroy
     redirect_to root_path
+  end
+
+  def notice
+    task = Task.find(params[:id])
+    task.increment!(:notice_id, 1)
+
+    notice = Task.find(params[:id])
+    render json:{ task: notice }
+
   end
 
   private

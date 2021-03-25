@@ -17,8 +17,7 @@
   justify-content: center;
   font-size: 10px;
   max-width: 100%;
-  background-color: #f36363;
-  border: solid 1px black;
+
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -27,9 +26,7 @@
   display: flex;
   justify-content: center;
   font-size: 10px;
-  max-width: 100%;
-  background-color: #6ac8f3;
-  border: solid 1px black;
+  width: 100%;
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -76,24 +73,32 @@
 
 .yotei-link{
   color: black;
+  background-color: #b6f3aa;
+  border: solid 1px black;
+  width: 100%;
+  text-align: center;
 }
 
 .kiroku-link{
   color: black;
+  background-color: #8dd2f1;
+  border: solid 1px black;
+  width: 100%;
+  text-align: center;
 }
 
 
 .yotei-look{
   display: flex;
   width: 40px;
-  background-color: #f36363;
+  background-color: #b6f3aa;
   border: solid 1px black;
 }
 
 .kiroku-look{
   display: flex;
   width: 40px;
-  background-color: #6ac8f3;
+  background-color: #8dd2f1;
   border: solid 1px black;
 }
 
