@@ -95,6 +95,38 @@
 
         </div>
 
+      <div class="all-pets-group">
+        <div class='mypage-text-wrap'>
+          <label class="mypage-text">
+          Your Articles
+          </label>
+        </div>
+        <div class='your-all-articles'>
+          all your articles
+
+          <ul class='article-lists'>
+
+            <% @user.articles.order('created_at DESC').each do |article| %>
+                <li class='list'>
+                  <%= link_to article_path(article.id), class: "article-content" do %>
+                    <div class='article-img-content'>
+                      <%= image_tag article.image, class: "article-img" %>
+                    </div>
+                    <div class='article-info'>
+                      <h3 class='article-name'>
+                        <%= article.title %>
+                      </h3>
+                      <h4 class='user-nickname'>
+                        <span><%= article.user.nickname %></span>
+                      </h4>
+                    </div>
+                  <% end %>
+                </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
 
 
     </div>

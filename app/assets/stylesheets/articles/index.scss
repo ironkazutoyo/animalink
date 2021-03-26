@@ -155,8 +155,8 @@ a {
   height: 30vh;
   margin-bottom: 2%;
   overflow: scroll;
-
 }
+
 .mostlike-articles{
   border-bottom: solid 5px #f3af60;
   color: black;
@@ -183,12 +183,11 @@ a {
   flex-direction: row;
   overflow: scroll;
   flex-wrap: wrap;
-
 }
 
 .article-lists>.list {
-  max-width: 50%;
-  max-height: 50%;
+  width: 50%;
+  height: 100%;
   padding: 1%;
   display: flex;
 }
@@ -196,6 +195,8 @@ a {
 .article-content{
   background-color: #f7d35f;
   border-radius: 10px;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -203,7 +204,7 @@ a {
 
 .article-img-content{
   width: 100%;
-  height: 100%;
+  height: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -219,10 +220,14 @@ a {
 
 .article-info {
   max-width: 100%;
+  max-height: 30%;
   border: double 5px #f3bf13;
   border-radius: 20px;
   color: black;
   padding: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .article-name {
@@ -231,5 +236,5 @@ a {
 
 .user-nickname{
   font-size: 15px;
-  text-align: end;
+  margin-top: 20px;
 }
